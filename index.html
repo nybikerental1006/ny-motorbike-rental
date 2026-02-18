@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NY MotorBike Rental Khaosan Road Bangkok</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial; background:#f5f5f5; margin:0; padding:20px; }
+    .container { max-width:600px; margin:auto; background:white; padding:20px; border-radius:12px; }
+    h1 { text-align:center; }
+    input, select, textarea, button {
+      width:100%;
+      padding:10px;
+      margin-top:10px;
+      border-radius:8px;
+      border:1px solid #ddd;
+    }
+    button {
+      background:black;
+      color:white;
+      font-weight:bold;
+      cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>NY Bike Rental Bangkok</h1>
+  <p>Motorbike Rental Near Khaosan Road</p>
+
+  <h3>Book Your Bike</h3>
+
+  <input type="text" id="name" placeholder="Full Name" required>
+  <input type="text" id="phone" placeholder="Phone / WhatsApp" required>
+
+  <select id="bike">
+    <option>Honda Click 125cc - 300 THB/day</option>
+    <option>Honda PCX 160cc - 450 THB/day</option>
+  </select>
+
+  <input type="date" id="pickup">
+  <input type="date" id="return">
+
+  <textarea id="message" placeholder="Special request"></textarea>
+
+  <button onclick="sendWhatsApp()">Send Booking via WhatsApp</button>
+</div>
+
+<script>
+function sendWhatsApp() {
+  var phoneNumber = "66938272786"; // REPLACE with your number (no +)
+  
+  var name = document.getElementById("name").value;
+  var phone = document.getElementById("phone").value;
+  var bike = document.getElementById("bike").value;
+  var pickup = document.getElementById("pickup").value;
+  var returnDate = document.getElementById("return").value;
+  var message = document.getElementById("message").value;
+
+  var url = "https://wa.me/" + phoneNumber +
+    "?text=Hello NY Bike Rental,%0A" +
+    "Name: " + name + "%0A" +
+    "Phone: " + phone + "%0A" +
+    "Bike: " + bike + "%0A" +
+    "Pickup: " + pickup + "%0A" +
+    "Return: " + returnDate + "%0A" +
+    "Message: " + message;
+
+  window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
